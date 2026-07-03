@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,600&family=Inter:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-heading: "Cormorant Garamond", serif;
+  --font-mono: "Space Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: rgba(255, 248, 235, 0.45);
+  backdrop-filter: blur(16px) saturate(110%);
+  -webkit-backdrop-filter: blur(16px) saturate(110%);
+  border: 1px solid rgba(244, 162, 40, 0.22);
+  box-shadow: 0 8px 32px 0 rgba(181, 69, 27, 0.05);
+}
+
+.glass-panel-dark {
+  background: rgba(12, 35, 64, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 210, 63, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+
+.glass-amber {
+  background: rgba(255, 220, 160, 0.15);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 162, 40, 0.3);
+  box-shadow: 0 10px 30px 0 rgba(181, 69, 27, 0.06);
+}
+
+/* Glassmorphic Clinical (Medical Glass) Styles */
+.glass-medical {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(14px) saturate(125%);
+  -webkit-backdrop-filter: blur(14px) saturate(125%);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 8px 32px 0 rgba(162, 185, 168, 0.12);
+}
+
+.glass-medical-card {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px 0 rgba(162, 185, 168, 0.08);
+}
+
+/* Warm, Rural Indian Soul Backgrounds & Patterns */
+.bg-terracotta-clay {
+  background-color: #FAF2E1;
+  background-image: 
+    radial-gradient(rgba(181, 69, 27, 0.03) 1px, transparent 0),
+    radial-gradient(rgba(244, 162, 40, 0.02) 2px, transparent 0);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Kolam/Rangoli Border Grid */
+.kolam-border {
+  background-image: radial-gradient(circle, #F4A228 1px, transparent 1.5px);
+  background-size: 8px 8px;
+}
+
+/* Floating Fireflies / Gold Dust */
+@keyframes firefly {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px) scale(0.8);
+    opacity: 0.2;
+  }
+  33% {
+    transform: translateY(-25px) translateX(12px) scale(1.1);
+    opacity: 0.8;
+  }
+  66% {
+    transform: translateY(-10px) translateX(-18px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+.firefly-1 { animation: firefly 7s infinite ease-in-out; }
+.firefly-2 { animation: firefly 9s infinite ease-in-out 2s; }
+.firefly-3 { animation: firefly 11s infinite ease-in-out 4s; }
+.firefly-4 { animation: firefly 8s infinite ease-in-out 1s; }
+.firefly-5 { animation: firefly 13s infinite ease-in-out 3s; }
+
+/* Diya Lamp Glow pulse */
+@keyframes diya-glow {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px rgba(244, 162, 40, 0.5));
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(244, 162, 40, 0.9));
+    opacity: 1;
+  }
+}
+
+.diya-flame {
+  animation: diya-glow 2.5s infinite ease-in-out;
+}
+
+/* Flower blooming expanding hover state */
+.bloom-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bloom-hover::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0px;
+  height: 0px;
+  background: rgba(244, 162, 40, 0.08);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease-out, height 0.6s ease-out;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.bloom-hover:hover::after {
+  width: 350px;
+  height: 350px;
+}
+
+/* Clay focus glow */
+.clay-focus:focus-within {
+  border-color: #B5451B;
+  box-shadow: 0 0 0 3px rgba(181, 69, 27, 0.15);
+}
+
+/* Custom scrollbar matching Rural Soul design */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FDF3E3;
+}
+::-webkit-scrollbar-thumb {
+  background: #EADCB9;
+  border-radius: 8px;
+  border: 2px solid #FDF3E3;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C4B28B;
+}
+
+/* Custom fade-rise animations for Cinematic-Clinical Welcome Screen */
+@keyframes fade-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-rise {
+  animation: fade-rise 0.8s ease-out forwards;
+}
+
+.animate-fade-rise-delay {
+  animation: fade-rise 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-rise-delay-2 {
+  animation: fade-rise 0.8s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+@keyframes warm-diya-glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(244, 162, 40, 0.4), 0 4px 15px rgba(181, 69, 27, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(244, 162, 40, 0.85), 0 4px 20px rgba(181, 69, 27, 0.3);
+  }
+}
+
+.btn-diya-pulse {
+  animation: warm-diya-glow 3s infinite ease-in-out;
+}

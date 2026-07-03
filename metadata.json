@@ -1,0 +1,6 @@
+{
+  "name": "ASHA Clinical Decision Support System",
+  "description": "A professional, clinical-grade patient management and Decision Support System (CDSS) for rural health clinics in India. Designed to track patient longitudinal history, record vitals, and assist ASHA workers with offline diagnostic intelligence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
